@@ -52,7 +52,7 @@ def ask(message):
         bot.register_next_step_handler(ctg_ck, ctangens)
     elif message.text == 'Назад':
         murkup.add(sin, cos, tg, ctg)
-        bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
+        bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
     else:
         bot.send_message(message.chat.id, '<i>Увы,</i> я не могу распознать это', parse_mode='html')
 
@@ -65,13 +65,13 @@ def sinus(message):
 
     if message.text == 'Назад':
         murkup.add(sin, cos, tg, ctg)
-        bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
+        bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
     else:
         try:
             if int(message.text) >= 0 and int(message.text) <= 360:
                 bot.send_message(message.chat.id, f'Синус угла {int(message.text)}° примерно равен {round(math.sin(math.radians(float(message.text))), 2)}', parse_mode='html')
                 murkup.add(sin, cos, tg, ctg)
-                bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
+                bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
             else:
                 sin_ck = bot.send_message(message.chat.id, 'Введите <b>число</b> в промежутке от <b>0</b> до <b>360</b>', parse_mode='html')
                 bot.register_next_step_handler(sin_ck, sinus)
@@ -89,13 +89,13 @@ def cosinus(message):
 
     if message.text == 'Назад':
         murkup.add(sin, cos, tg, ctg)
-        bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
+        bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
     else:
         try:
             if int(message.text) >= 0 and int(message.text) <= 360:
                 bot.send_message(message.chat.id, f'Косинус угла {int(message.text)}° примерно равен {round(math.cos(math.radians(float(message.text))), 2)}', parse_mode='html')
                 murkup.add(sin, cos, tg, ctg)
-                bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
+                bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
             else:
                 cos_ck = bot.send_message(message.chat.id, 'Введите <b>число</b> в промежутке от <b>0</b> до <b>360</b>', parse_mode='html')
                 bot.register_next_step_handler(cos_ck, cosinus)
@@ -112,13 +112,13 @@ def tangens(message):
 
     if message.text == 'Назад':
         murkup.add(sin, cos, tg, ctg)
-        bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
+        bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
     else:
         try:
             if int(message.text) >= 0 and int(message.text) <= 360:
                 bot.send_message(message.chat.id, f'Тангенс угла {int(message.text)}° примерно равен {round(math.tan(math.radians(float(message.text))), 2)}', parse_mode='html')
                 murkup.add(sin, cos, tg, ctg)
-                bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
+                bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
             else:
                 tg_ck = bot.send_message(message.chat.id, 'Введите <b>число</b> в промежутке от <b>0</b> до <b>360</b>', parse_mode='html')
                 bot.register_next_step_handler(tg_ck, tangens)
@@ -135,13 +135,13 @@ def ctangens(message):
 
     if message.text == 'Назад':
         murkup.add(sin, cos, tg, ctg)
-        bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
+        bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию:</i>', parse_mode='html', reply_markup = murkup)
     else:
         try:
             if int(message.text) >= 0 and int(message.text) <= 360:
                 bot.send_message(message.chat.id, f'Котангенс угла {int(message.text)}° примерно равен {round(1 / math.tan(math.radians(float(message.text))), 2)}', parse_mode='html')
                 murkup.add(sin, cos, tg, ctg)
-                bot.send_message(message.chat.id, 'Выберете <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
+                bot.send_message(message.chat.id, 'Выберите <i>тригонометрическую функцию</i>', parse_mode='html', reply_markup = murkup)
             else:
                 ctg_ck = bot.send_message(message.chat.id, 'Введите <b>число</b> в промежутке от <b>0</b> до <b>360</b>', parse_mode='html')
                 bot.register_next_step_handler(ctg_ck, ctangens)
